@@ -2,7 +2,7 @@ import telebot
 from Action import CommonAction
 from datetime import datetime
 
-token = "5400628264:AAH8OyPiHQnMRfaXT86Xt9HJ7-hsLgczINs"
+token = "TOKEN"
 commands = ["/start", "/help", "/order"]
 bot = telebot.TeleBot(token)
 
