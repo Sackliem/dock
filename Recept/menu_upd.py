@@ -14,7 +14,6 @@ schedule = {0: {'Borsh': 200},
 
 def menu_update():
     while True:
-        print("start")
         if session.query(Menu.name).first() is None:
             key = list(schedule[datetime.today().weekday()].items())[0]
             menu = Menu(name=key[0], price=[1][0])

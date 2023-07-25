@@ -1,9 +1,10 @@
 from sqlalchemy import Column, Integer, String, ForeignKey, Table
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, exc
 from sqlalchemy.orm import declarative_base, sessionmaker, relationship
+import time
+
 
 engine = create_engine("postgresql+psycopg2://root:root@pg_db:5432/db")
-
 Base = declarative_base()
 
 

@@ -1,4 +1,4 @@
-version: '3.9'
+version: '2.1'
 
 services:
   db:
@@ -12,6 +12,12 @@ services:
       - ./postgres_data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U root -d db" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
 
 
   pgadmin:
@@ -26,14 +32,17 @@ services:
       - "5050:80"
 
 
+
+
   tg:
     depends_on:
+      db:
+        condition: service_healthy
+    links:
       - db
-      - pgadmin
     container_name: Recept
     build: Recept/
     command:
-      python Recept/tgbot.py && python Recept/menu_upd.py
-
+      bash Recept/run.sh
 
 

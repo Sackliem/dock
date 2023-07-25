@@ -11,6 +11,7 @@ LABEL description="TG"
 # Copying the dependencies file
 ADD requirements.txt .
 ADD Action.py /Recept/
+ADD run.sh /Recept/
 ADD bd.py /Recept/
 ADD menu_upd.py /Recept/
 ADD tgbot.py /Recept/

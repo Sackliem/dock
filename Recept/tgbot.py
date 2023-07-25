@@ -1,8 +1,9 @@
 import telebot
 from Action import CommonAction
 from datetime import datetime
+import subprocess
 
-token = "TOKEN"
+token = "5400628264:AAH8OyPiHQnMRfaXT86Xt9HJ7-hsLgczINs"
 commands = ["/start", "/help", "/order"]
 bot = telebot.TeleBot(token)
 
